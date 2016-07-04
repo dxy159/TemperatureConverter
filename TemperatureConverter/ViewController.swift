@@ -10,6 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var celsiusValue: UITextField!
+    @IBOutlet weak var computedValue: UILabel!
+    
+    @IBAction func calculate(sender: UIButton) {
+        if let celsiusValue = celsiusValue.text {
+            if let intCelsiusValue = Int(celsiusValue) {
+                let fahrenheit = (9 * intCelsiusValue + 160) / 5
+                computedValue.text = String(fahrenheit)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
